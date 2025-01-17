@@ -245,15 +245,6 @@ def draw_highlighted_tile():
         grid_x, grid_y = highlighted_tile_pos
         pygame.draw.rect(screen, RED, (grid_x * TILE_SIZE - scroll, grid_y * TILE_SIZE, TILE_SIZE, TILE_SIZE), 3)
 
-def draw_to_do_list():
-    font = pygame.font.Font(None, 24)
-    tasks = ["To Do:", "- Remove grid lines", "- Add more blocks", "- Polish code"]
-    y_offset = SCREEN_HEIGHT + LOWER_MARGIN - 80
-    for task in tasks:
-        text = font.render(task, True, BLACK)
-        screen.blit(text, (10, y_offset))
-        y_offset += 20
-
 # Game loop
 run = True
 is_dragging = False  # Initialize dragging state
@@ -380,7 +371,7 @@ while run:
     draw_welcome_text()
     draw_highlighted_tile()
     draw_close_button()
-    draw_to_do_list()
+
 
     pygame.display.update()
 
